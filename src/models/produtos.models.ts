@@ -5,21 +5,42 @@ import { Table,Model, Column, DataType} from "sequelize-typescript";
 export class Produto extends Model <Produto>{
     
     @Column({
-        type:DataType.STRING(60),
+        primaryKey:true,
+        type:DataType.STRING(10),
         allowNull:false,
     })
-    codigo:string;
+    id:string;
+    
+  
     @Column({
-        type:DataType.STRING,
+        type:DataType.STRING(150),
         allowNull:false,
     })
     nome:string;
-
     @Column({
-        type:DataType.DECIMAL,
+        type:DataType.STRING(50),
         allowNull:false,
     })
-    preco:number;
+    embalagem:string;
+
+    @Column({
+        type:DataType.STRING(50),
+        allowNull:false,
+    })
+    tamanho:string;
+
+    @Column({
+        type:DataType.STRING(50),
+        allowNull:false,
+    })
+    sabor:string;
+
+
+    @Column({
+        type:DataType.FLOAT,
+        allowNull:false,
+    })
+    preco_lista:number;
   
    
 }
