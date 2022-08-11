@@ -16,10 +16,10 @@ export class ProdutosController{
     }
 
     //PARAMETRO
-    @Get(':id')
+    @Get(':CODIGO_DO_PRODUTO')
     async obterUm(@Param()params):Promise<Produto>
     {
-        return this.produtosService.obterUm(params.id);
+        return this.produtosService.obterUm(params.CODIGO_DO_PRODUTO);
     }
 
     @Post()
@@ -29,13 +29,13 @@ export class ProdutosController{
     }
 
     @Put()
-    async alterarproduto(@Body() produto:Produto):Promise<[number,Produto[]]>{
+     async alterarproduto(@Body() produto:Produto):Promise<[number,Produto[]]>{
        
         return this.produtosService.alterar(produto);
-    }
+   }
 
-    @Delete(':id')
+    @Delete(':CODIGO_DO_PRODUTO')
     async apagar(@Param()params){
-        this.produtosService.apagar(params.id)
+        this.produtosService.apagar(params.CODIGO_DO_PRODUTO)
     }
 }

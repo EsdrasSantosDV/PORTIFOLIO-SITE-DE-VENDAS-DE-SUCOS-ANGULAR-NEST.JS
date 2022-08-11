@@ -2,47 +2,46 @@ import { Table,Model, Column, DataType} from "sequelize-typescript";
 
 
 @Table
-export class Produto extends Model <Produto>{
+export class Vendedor extends Model <Vendedor>{
     
     @Column({
         primaryKey:true,
-        type:DataType.STRING(10),
+        type:DataType.STRING(5),
         allowNull:false,
-       
     })
-    CODIGO_DO_PRODUTO:string;
+    MATRICULA:string;
     
   
     @Column({
-        type:DataType.STRING(150),
+        type:DataType.STRING(100),
         allowNull:false,
     })
-    NOME_DO_PRODUTO:string;
-
-    @Column({
-        type:DataType.STRING(50),
-        allowNull:false,
-    })
-    EMBALAGEM:string;
-
-    @Column({
-        type:DataType.STRING(50),
-        allowNull:false,
-    })
-    TAMANHO:string;
-
-    @Column({
-        type:DataType.STRING(50),
-        allowNull:false,
-    })
-    SABOR:string;
-
+    NOME:string;
 
     @Column({
         type:DataType.FLOAT,
         allowNull:false,
     })
-    PRECO_DE_LISTA:number;
+    PERCENTUAL_COMISSAO:number;
+
+    @Column({
+        type:DataType.DATE,
+        allowNull:false,
+    })
+    DATA_ADMISSAO:Date;
+
+    @Column({
+        type:DataType.BOOLEAN,
+        allowNull:false,
+    })
+    DE_FERIAS:boolean;
+
+
+    @Column({
+        type:DataType.STRING(50),
+        allowNull:false,
+    })
+    BAIRRO:string;
   
    
 }

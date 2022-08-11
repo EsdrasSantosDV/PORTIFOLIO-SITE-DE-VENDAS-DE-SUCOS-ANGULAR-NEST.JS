@@ -17,8 +17,8 @@ export class ProdutosService{
         return this.produtoModel.findAll();
     }
 
-    async obterUm(id:number):Promise<Produto>{
-        return this.produtoModel.findByPk(id);
+    async obterUm(CODIGO_DO_PRODUTO:string):Promise<Produto>{
+        return this.produtoModel.findByPk(CODIGO_DO_PRODUTO);
     }
 
     async criar(produto:Produto)
@@ -29,14 +29,14 @@ export class ProdutosService{
     async alterar(produto: Produto):Promise<[number,Produto[]]>{
         return  this.produtoModel.update(produto,{
             where:{
-                id:produto.id
+                CODIGO_DO_PRODUTO:produto.CODIGO_DO_PRODUTO
             }
         });
     }
 
-    async apagar(id:number)
+    async apagar(CODIGO_DO_PRODUTO:string)
     {
-        const produto: Produto = await this.obterUm(id);
+        const produto: Produto = await this.obterUm(CODIGO_DO_PRODUTO);
         produto.destroy();
     }
 
