@@ -6,8 +6,6 @@ export class Notas_FiscaisController{
     constructor(private notas_fiscaisService:Notas_FiscaisService){
 
     }
-   
-
     //DECORETORS
     //QUANDO TIVER UMA REQUISIÇÃO DO TIPO GET
     @Get()

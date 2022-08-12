@@ -11,8 +11,7 @@ export class VendedorService{
 
     }
 
-
-    //PROMESSA DE PRODUTO
+   //PROMESSA DE PRODUTO
     async obterTodos():Promise <Vendedor[]>{
         return this.vendedorModel.findAll();
     }
@@ -33,6 +32,7 @@ export class VendedorService{
             }
         });
     }
+
 
     async apagar(MATRICULA:string)
     {

@@ -1,9 +1,12 @@
+import { Transferencia } from './models/transferencias.models';
+import { Notas_FiscaisController } from './controllers/notas_fiscais.controller';
+import { TransferenciasService } from './services/transferencias.services';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config/dist/config.module';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { Notas_FiscaisController } from './controllers/notas_fiscais.controller';
+import { TransferenciasController } from './controllers/transferencias.controller';
 import { ProdutosController } from './controllers/produtos.controller';
 import { VendedorController } from './controllers/vendedor.controller';
 import { Notas_Fiscais } from './models/notas_fiscais.models';
@@ -28,9 +31,9 @@ import { VendedorService } from './services/vendedores.services';
       autoLoadModels:true,
       synchronize:true,
     }),
-    SequelizeModule.forFeature([Produto,Vendedor,Notas_Fiscais])
+    SequelizeModule.forFeature([Produto,Vendedor,Notas_Fiscais,Transferencia])
   ],
-  controllers: [AppController,ProdutosController,VendedorController,Notas_FiscaisController],
-  providers: [AppService,ProdutosService,VendedorService,Notas_FiscaisService],
+  controllers: [AppController,ProdutosController,VendedorController,Notas_FiscaisController,TransferenciasController],
+  providers: [AppService,ProdutosService,VendedorService,Notas_FiscaisService,TransferenciasService],
 })
 export class AppModule {}
